@@ -22,6 +22,7 @@ header{
 	padding: 7px 8px;
 	padding-top: 8px;
 	cursor: pointer;
+
 	
 }
 .navbar-collapse{
@@ -35,8 +36,38 @@ header{
 }
 
 .phai{
-		padding-top: 7px;
+	padding-top: 7px;
 }
+
+.carousel-inner img{
+	width: 100%
+}
+.slide{
+	margin-top: 20px
+}
+
+.text-center{
+	font-size: 50px;
+	margin-top: 50px;
+}
+footer{
+	background-color: #3f3f3f;
+	color: #d5d5d5;
+}
+
+.center{
+	text-align:center;
+}
+hr{
+	border-bottom: 2px solid gray;
+	width: 90%;
+
+}
+
+hr.hrFooter{
+	width: 65%
+}
+
 
 
 
