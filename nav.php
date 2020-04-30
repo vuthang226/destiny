@@ -73,10 +73,16 @@
 							</a>
 
 							<ul class="dropdown-menu">
-
-								<li><a href="#">Đăng nhập</a></li>
-
-								<li><a href="#">Đăng kí</a></li>
+								<?php
+                            	if(isset($_SESSION['username']) && $_SESSION['username']){
+                                    // nếu đăng nhập r in ra mh
+                                    echo '<li><a href="./logOut.php">Đăng xuất</a></li>';
+                                }
+                                else{
+                                    echo '<li><a href="./signIn.php">Đăng nhập</a></li>';
+                                    echo '<li><a href="./signUp.php">Đăng kí</a></li>';
+                                }
+                        		?>
 
 							</ul>
 

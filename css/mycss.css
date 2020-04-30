@@ -53,6 +53,7 @@ header{
 footer{
 	background-color: #3f3f3f;
 	color: #d5d5d5;
+	margin-top: 60px;
 }
 
 .center{
@@ -67,6 +68,7 @@ hr{
 hr.hrFooter{
 	width: 65%
 }
+
 
 
 

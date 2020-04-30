@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -5,14 +6,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>web</title>
-	<link rel ="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel ="stylesheet" href="css/mycss.css">
-	<script src="bootstrap/jquery.min.js"></script>	
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<link rel ="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+	<link rel ="stylesheet" href="./css/mycss.css">
+	<script src="./bootstrap/jquery.min.js"></script>	
+	<script src="./bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-
+<?php session_start(); ?>
 	<?php
 		include('nav.php');
 	?>
