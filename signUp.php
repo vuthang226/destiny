@@ -161,7 +161,7 @@ include('./connect.php');
 
  <div class="container" style="margin-top: 80px">
  	<div class="col-md-4">
-<form action="xlsignUp.php" method="POST">
+<form action="signUp.php" method="POST">
     <h3>Đăng kí</h3>
     <div class="form-group">
         <label for="email">Họ và Tên:</label>
