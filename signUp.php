@@ -3,12 +3,12 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>web</title>
-	<link rel ="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-	<link rel ="stylesheet" href="./css/mycss.css">
-	<script src="./bootstrap/jquery.min.js"></script>	
-	<script src="./bootstrap/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>web</title>
+    <link rel ="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel ="stylesheet" href="./css/mycss.css">
+    <script src="./bootstrap/jquery.min.js"></script>   
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <?php
@@ -27,71 +27,71 @@ include('./connect.php');
     $isPassed   = true;
 
 
-    	if (!$username || !$password || !$email || !$fullname || !$phone || !$address || !$cfpassword)
-    	{
-        	header("Location:./sign_up.php?error=1");
-        	$isPassed = false;
-    	}
-
-    	if (!preg_match('#^[a-z][a-z0-9\._]{2,31}@[a-z0-9\-]{3,}(\.[a-z]{2,4}){1,2}$#', $email))
-    	{
-            header("Location:./sign_up.php?error=2");
+        if (!$username || !$password || !$email || !$fullname || !$phone || !$address || !$cfpassword)
+        {
+            header("Location:./signUp.php?error=1");
             $isPassed = false;
-    	}
-
-    	if (mysqli_num_rows(mysqli_query($conn ,"SELECT 'us.Email' FROM user WHERE 'us.Email'='$email'")) > 0)
-    	{
-        	header("Location:./sign_up.php?error=3");
-            $isPassed = false;
-    	}
-
-    	if (mysqli_num_rows(mysqli_query($conn ,"SELECT 'us.Phone' FROM user WHERE 'us.Phone'='$phone'")) > 0)
-    	{
-        	header("Location:./sign_up.php?error=4");
-            $isPassed = false;
-    	}
-
-
-
-    	if (mysqli_num_rows(mysqli_query($conn ,"SELECT 'us.Username' FROM user WHERE 'us.Username'='$username'")) > 0){
-        	header("Location:./sign_up.php?error=5");
-            $isPassed = false;    	
         }
 
-    	if(trim($password) == ''&& strlen($password)>6){
-            header("Location:./sign_up.php?error=6");
+        if (!preg_match('#^[a-z][a-z0-9\._]{2,31}@[a-z0-9\-]{3,}(\.[a-z]{2,4}){1,2}$#', $email))
+        {
+            header("Location:./signUp.php?error=2");
+            $isPassed = false;
+        }
+
+        if (mysqli_num_rows(mysqli_query($conn ,"SELECT 'us.Email' FROM user WHERE 'us.Email'='$email'")) > 0)
+        {
+            header("Location:./signUp.php?error=3");
+            $isPassed = false;
+        }
+
+        if (mysqli_num_rows(mysqli_query($conn ,"SELECT 'us.Phone' FROM user WHERE 'us.Phone'='$phone'")) > 0)
+        {
+            header("Location:./signUp.php?error=4");
+            $isPassed = false;
+        }
+
+
+
+        if (mysqli_num_rows(mysqli_query($conn ,"SELECT 'us.Username' FROM user WHERE 'us.Username'='$username'")) > 0){
+            header("Location:./signUp.php?error=5");
+            $isPassed = false;      
+        }
+
+        if(trim($password) == ''&& strlen($password)>6){
+            header("Location:./signUp.php?error=6");
             $isPassed = false;
         }
 
 
         if($password!= $cfpassword){
-                header("Location:./sign_up.php?error=7");
+                header("Location:./signUp.php?error=7");
                 $isPassed = false;
         }
 
 
         if($isPassed){
-    		$result = mysqli_query($conn ,"
-		        INSERT INTO user (
-		            'us.Full Name',
-		            'us.Username',
-		            'us.Password',
-		            'us.Email',
-		            'us.Phone',
-		            'us.Address'
+            $result = mysqli_query($conn ,"
+                INSERT INTO user (
+                    'us.Full Name',
+                    'us.Username',
+                    'us.Password',
+                    'us.Email',
+                    'us.Phone',
+                    'us.Address'
 
-		        )
-		        VALUES (
-		            '$fullname',
-		            '$username',
-		            '$password',
-		            '$email',
-		            '$phone',
-		            '$address'
-		        )
-		    ");
+                )
+                VALUES (
+                    '$fullname',
+                    '$username',
+                    '$password',
+                    '$email',
+                    '$phone',
+                    '$address'
+                )
+            ");
                 if($result){
-                	header("Location:./signIn.php");
+                    header("Location:./signIn.php");
                 }
                 else{
                     header("Location:./signUp.php?error=8");
@@ -115,18 +115,18 @@ include('./connect.php');
         if(isset($_GET['error'])== true){
         $er = $_GET['error'];
 
-	switch ($er) {
-    	case "1":
+    switch ($er) {
+        case "1":
         echo "<div class='alert alert-danger' style='margin-top: 3px'>
                      <strong>Chú ý!</strong> Đăng kí không thành công
                 </div>";
         break;
-    	case "2":
+        case "2":
         echo "<div class='alert alert-danger' style='margin-top: 3px'>
                      <strong>Chú ý!</strong> Đăng kí không thành công
                 </div>";
         break;
-    	case "3":
+        case "3":
         echo "<div class='alert alert-danger' style='margin-top: 3px'>
                      <strong>Chú ý!</strong> Đăng kí không thành công
                 </div>";
@@ -141,12 +141,12 @@ include('./connect.php');
                      <strong>Chú ý!</strong> Đăng kí không thành công
                 </div>";
         break;
-    	case "6":
+        case "6":
         echo "<div class='alert alert-danger' style='margin-top: 3px'>
                      <strong>Chú ý!</strong> Đăng kí không thành công
                 </div>";
         break;
-    	case "7":
+        case "7":
         echo "<div class='alert alert-danger' style='margin-top: 3px'>
                      <strong>Chú ý!</strong> Đăng kí không thành công
                 </div>";
@@ -160,7 +160,7 @@ include('./connect.php');
 
 
  <div class="container" style="margin-top: 80px">
- 	<div class="col-md-4">
+    <div class="col-md-4">
 <form action="signUp.php" method="POST">
     <h3>Đăng kí</h3>
     <div class="form-group">
