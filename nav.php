@@ -75,7 +75,8 @@
 							<ul class="dropdown-menu">
 								<?php
                             	if(isset($_SESSION['username']) && $_SESSION['username']){
-                                    // nếu đăng nhập r in ra mh
+                            		$us=$_SESSION['username'];
+                                    echo '<li><a href="#">Hi,</a></li>';
                                     echo '<li><a href="./logOut.php">Đăng xuất</a></li>';
                                 }
                                 else{

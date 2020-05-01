@@ -1,46 +1,33 @@
 <?php
-//Khai báo sử dụng session
 session_start();
- 
-//Khai báo utf-8 để hiển thị được tiếng việt
 header('Content-Type: text/html; charset=UTF-8');
- 
-//Xử lý đăng nhập
 if (isset($_POST['signIn'])) 
 {
-    //Kết nối tới database
     include('connect.php');
-     
-    //Lấy dữ liệu nhập vào
-    $username = addslashes($_POST['username']);
-    $password = addslashes($_POST['password']);
-     
-    //Kiểm tra đã nhập đủ tên đăng nhập với mật khẩu chưa
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
     if (!$username || !$password) {
-        echo "Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu. <a href='javascript: history.go(-1)'>Trở lại</a>";
-        exit;
+        header("Location:./signUp.php?error=1");
     }
 
-    //Kiểm tra tên đăng nhập có tồn tại không
-    $query = mysqli_query("SELECT 'us.Username', 'us.Password' FROM user WHERE 'us.Username'='$username'");
+
+    $query = mysqli_query("SELECT `us.Username`, `us.Password` FROM user WHERE 'us.Username'='$username'");
     if (mysqli_num_rows($query) == 0) {
-        echo "Tên đăng nhập này không tồn tại. Vui lòng kiểm tra lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
-        exit;
+        header("Location:./signUp.php?error=2");
     }
      
-    //Lấy mật khẩu trong database ra
+
     $row = mysqli_fetch_array($query);
      
-    //So sánh 2 mật khẩu có trùng khớp hay không
-    if ($password != $row['us.Password']) {
-        echo "Mật khẩu không đúng. Vui lòng nhập lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
-        exit;
+
+    if ($password != $row[`us.Password`]) {
+        header("Location:./signUp.php?error=3");
     }
      
-    //Lưu tên đăng nhập
+
     $_SESSION['username'] = $username;
-    echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='./index.php'>Về trang chủ</a>";
-    die();
+        header("Location:./index.php");
+
 }
 ?>
 <!DOCTYPE html>
@@ -59,9 +46,39 @@ if (isset($_POST['signIn']))
     include('nav.php');
 ?>
 
+
+<div class="container">
+ <div class= "error">
+    <?php
+
+        if(isset($_GET['error'])== true){
+        $er = $_GET['error'];
+
+    switch ($er) {
+        case "1":
+        echo "<div class='alert alert-danger' style='margin-top: 20px'>
+                     <strong>Chú ý!</strong> Đăng kí không thành công
+                </div>";
+        break;
+        case "2":
+        echo "<div class='alert alert-danger' style='margin-top: 20px'>
+                     <strong>Chú ý!</strong> Đăng kí không thành công
+                </div>";
+        break;
+        case "3":
+        echo "<div class='alert alert-danger' style='margin-top: 20px'>
+                     <strong>Chú ý!</strong> Đăng kí không thành công
+                </div>";
+        break;
+        }
+    }
+    ?>
+</div>
+</div>
+
  <div class="container" style="margin-top: 80px">
  	<div class="col-md-4">
- 		<form action="signIn.php?do=login" method="POST">
+ 		<form action="signIn.php" method="POST">
 
     		<h3>Đăng nhập</h3>
     		<div class="form-group">
