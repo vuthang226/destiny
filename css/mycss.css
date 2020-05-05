@@ -68,6 +68,19 @@ hr{
 hr.hrFooter{
 	width: 65%
 }
+.thumbnail{
+	height:  580px
+}
+.caption{
+	margin-left: 24px;
+}
+.breadcrumb{
+	margin-top: 35px;
+}
+.media{
+	margin-top: 30px;
+}
+
 
 
 

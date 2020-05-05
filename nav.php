@@ -18,7 +18,7 @@
 
 						<li class="dropdown">
 
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Snecker<span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sneaker<span class="caret"></span></a>
 
 							<ul class="dropdown-menu">
 
@@ -46,7 +46,7 @@
 
 						</button>
 
-						<a class="navbar-brand" href="#">
+						<a class="navbar-brand" href="./index.php">
 							<img src="img/brandsmall.png" width="240" height="97">
 						</a>
 
@@ -55,7 +55,7 @@
 					<ul class="nav navbar-nav navbar-right">
 
 						<li>
-							<a href="#">
+							<a href="./bag.php">
 								<button type="button" class="btn btn-default btn-lg icon2">
 									<span class="glyphicon glyphicon-shopping-cart"></span>
 									<span class="caret"></span>
@@ -76,7 +76,7 @@
 								<?php
                             	if(isset($_SESSION['username']) && $_SESSION['username']){
                             		$us=$_SESSION['username'];
-                                    echo '<li><a href="#">Hi,</a></li>';
+                                    echo '<li><a href="#">Hi,bạn '. $us .'</a></li>';
                                     echo '<li><a href="./logOut.php">Đăng xuất</a></li>';
                                 }
                                 else{

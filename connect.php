@@ -1,6 +1,6 @@
 <?php 
     // Kết nối CSDL
-$conn = new mysqli('remotemysql.com', 'rkvq6WmduH', 'jgYQHYUlha', 'rkvq6WmduH');
+$conn = new mysqli('localhost', 'root', '', 'web');
  
 // Kiểm tra kết nối
 if (!$conn) {
