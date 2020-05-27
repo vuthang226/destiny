@@ -91,16 +91,16 @@
 
 
 					</ul>
-					<form class="navbar-form navbar-right phai" role="search">
+					<form class="navbar-form navbar-right phai" role="search" action="search.php" method="GET">
 
 						<div class="form-group">
 
-							<input type="text" class="form-control" placeholder="Search">
+							<input type="text" class="form-control" placeholder="Search" name="ok">
 
 						</div>
 
 
-						<button type="button" class="btn btn-default btn-lg icon1">
+						<button type="submit" class="btn btn-default btn-lg icon1">
 
 							<span class="glyphicon glyphicon-search"></span> 
 

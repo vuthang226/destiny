@@ -45,7 +45,7 @@ $order = mysqli_query($conn ,"
 	'$User',
 	'$amount',
 	NOW(),
-	ADDDATE(NOW(), INTERVAL 30 DAY),
+	ADDDATE(NOW(), INTERVAL 3 DAY),
 	null,
 	null
 	)
