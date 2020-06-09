@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 05, 2020 lúc 08:16 PM
+-- Thời gian đã tạo: Th6 09, 2020 lúc 07:58 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.3
 
@@ -100,11 +100,15 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`pd.productCode`, `pd.productName`, `pd.productline`, `pd.productVendor`, `pd.productDescription`, `pd.buyPrice`, `pd.image`, `pd.gender`, `pd.discount`, `pd.qualityinStock`, `pd.view`, `pd.sold`) VALUES
 ('1', 'Nike Air Max 1', 'Nike, Air Max', 'Nike', 'Nike\'s first lifestyle Air Max lets you greet the streets with the soft, smooth and resilient ride of the Nike Air Max 270. The design draws inspiration from the Air Max pantheon, showcasing Nike\'s greatest innovation with its large window and fresh array of colours.', 4500000, 'airmax1.jpg', 'Men\'s Shoe', NULL, 38, 0, 0),
+('10', 'Adidas 1', 'Adidas', 'Adidas', 'No', 1000000, 'adidas1.jpg', 'Men\'s Shoe', NULL, 11, 0, 0),
 ('2', 'Nike Air Max 2', 'Nike, Air Max', 'Nike', 'The Nike Air Max 270 combines the exaggerated tongue from the Air Max 180 and classic elements from the Air Max 93. It features Nike\'s biggest heel Air unit yet for a super-soft ride that feels as impossible as it looks.', 4000000, 'airmax2.jpg', 'Men\'s Shoe', NULL, 93, 0, 0),
 ('3', 'Nike Air Max 3', 'Nike, Air Max', 'Nike', 'Inspired by Tinker\'s early sketches of the Air Max 1, Women\'s Nike Air Max Zero Shoe blends modern style with heritage roots. Crafted with premium upper materials, it features bootie construction and a visible Max Air unit for comfortable cushioning.', 3900000, 'airmax3.jpg', 'Women\'s Shoe', NULL, 45, 0, 0),
 ('4', 'Nike Air Max 270 Premium', 'Nike, Air Max', 'Nike', 'The Air Max 270 Premium Leather ‘Hyper Crimson’ features a lifestyle makeup and mid-top construction. Created with micro-perforated white leather and hits of black, the shoe’s standout feature is it’s signature Max Air unit, offering 270 degrees of visibility, finished in Hyper Crimson.', 5000000, 'airmax4.jpg', 'Women\'s Shoe', NULL, 58, 0, 0),
 ('5', 'Nike Air Max 270-University Gold', 'Nike, Air Max', 'Nike', 'The Nike Air Max 270 combines the exaggerated tongue from the Air Max 180 and classic elements from the Air Max 93. It features Nike\'s biggest heel Air unit yet for a super-soft ride that feels as impossible as it looks.', 3500000, 'airmax5.jpg', 'Men\'s Shoe', NULL, 16, 0, 0),
-('6', 'Nike Air Max 270-Green, White', 'Nike, Air Max', 'Nike', 'The Nike Air Max 270 combines the exaggerated tongue from the Air Max 180 and classic elements from the Air Max 93. It features Nike\'s biggest heel Air unit yet for a super-soft ride that feels as impossible as it looks.', 3000000, 'airmax6.jpg', 'Men\'s Shoe', NULL, 19, 0, 0);
+('6', 'Nike Air Max 270-Green, White', 'Nike, Air Max', 'Nike', 'The Nike Air Max 270 combines the exaggerated tongue from the Air Max 180 and classic elements from the Air Max 93. It features Nike\'s biggest heel Air unit yet for a super-soft ride that feels as impossible as it looks.', 3000000, 'airmax6.jpg', 'Men\'s Shoe', NULL, 19, 0, 0),
+('7', 'Adidas Stan Smith Green', 'Adidas, Stan Smith', 'Adidas', 'Considered details set this Stan apart from the pack. These adidas shoes have a luxurious vibe with a combination of full grain and coated leather. Precise stitching gives them a polished look and feel. Strut your adidas pride as you walk away sporting \"Stan Smith\" on the heel.', 1200000, 'stansmith.jpg', 'Men\'s Shoe', NULL, 500, 0, 0),
+('8', 'Adidas Superstar White', 'Adidas, Superstar', 'Adidas', 'Originally made for basketball courts in the \'70s. Celebrated by hip hop royalty in the \'80s. The adidas Superstar shoe is now a lifestyle staple for streetwear enthusiasts. The world-famous shell toe feature remains, providing style and protection. Just like it did on the B-ball courts back in the ', 2000000, 'Superstar1.jpg', 'Men\'s Shoe', NULL, 300, 0, 0),
+('9', 'Adidas Superstar Black', 'Adidas, Superstar', 'Adidas', 'Originally made for basketball courts in the \'70s. Celebrated by hip hop royalty in the \'80s. The adidas Superstar shoe is now a lifestyle staple for streetwear enthusiasts. The world-famous shell toe feature remains, providing style and protection. Just like it did on the B-ball courts back in the ', 3000000, 'Superstar2.jpg', 'Woman\'s Shoe', NULL, 1000, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -125,6 +129,9 @@ CREATE TABLE `productlines` (
 --
 
 INSERT INTO `productlines` (`pl.productLine`, `pl.numType`, `pl.textDescription`, `pl.htmlDescription`, `pl.image`) VALUES
+('Adidas', 4, 'Dòng Adidas', NULL, NULL),
+('Adidas, Stan Smith', 12, 'Dòng Stan Smith', NULL, NULL),
+('Adidas, Superstar', 3, 'Dòng Superstar', NULL, NULL),
 ('Nike, Air Force', 6, 'Dòng Air Force', NULL, NULL),
 ('Nike, Air Max', 6, 'Dòng Air Max', NULL, NULL),
 ('Nike, Air Uptempo', 3, 'Dòng Air Uptempo', NULL, NULL),
